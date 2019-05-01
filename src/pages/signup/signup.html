@@ -1,0 +1,104 @@
+<ion-content padding id="page11" style="background-color: black">
+  <div class="spacer" style="width:300px;height:50px;" id="signup-spacer8"></div>
+    <img src="assets/img/mylogo.png" style="display:block;width:45%;height:auto;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:300px;height:30px;" id="signup-spacer7"></div>    
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="signup()">
+    
+    <ion-item>
+      <ion-icon name="md-contact" item-left></ion-icon>
+      <ion-input type="text" placeholder="Full Name" formControlName="name" [(ngModel)]="userData.name"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.name">
+        <div class="error-message" *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').dirty || validations_form.get('name').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    
+    <ion-item>
+      <ion-icon name="md-mail" item-left></ion-icon>
+      <ion-input type="email" placeholder="Email Address" formControlName="email" [(ngModel)]="userData.email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-icon name="md-contact" item-left></ion-icon>
+      <ion-input type="text" placeholder="Username" formControlName="username" required [(ngModel)]="userData.username"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.username">
+        <div class="error-message" *ngIf="validations_form.get('username').hasError(validation.type) && (validations_form.get('username').dirty || validations_form.get('username').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <div formGroupName="matching_passwords">
+      <ion-item>
+        <ion-icon name="md-lock" item-left></ion-icon>
+        <ion-input type="password" placeholder="Password" formControlName="password" [(ngModel)]="userData.password"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="validations_form.get('matching_passwords').get('password').hasError(validation.type) && (validations_form.get('matching_passwords').get('password').dirty || validations_form.get('matching_passwords').get('password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-icon name="md-lock" item-left></ion-icon>
+        <ion-input type="password" placeholder="Confirm Password" formControlName="confirm_password"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.confirm_password">
+          <div class="error-message" *ngIf="validations_form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (validations_form.get('matching_passwords').get('confirm_password').dirty || validations_form.get('matching_passwords').get('confirm_password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <!-- These validations are for the form group -->
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+        <div class="error-message" *ngIf="validations_form.get('matching_passwords').hasError(validation.type) && (validations_form.get('matching_passwords').get('confirm_password').dirty || validations_form.get('matching_passwords').get('confirm_password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  
+    <!-- <div style="color: white; padding-left: 10px; font-size: 16px ">
+
+      <p>Check your game preferences:</p>
+      <div *ngFor="let entry of items">
+        <ion-checkbox color="light" style="display: inline-block; padding-left: 30px" (ionChange)="addCheckbox($event, entry.val)"></ion-checkbox>
+        <p style="display: inline-block; padding-left: 15px">{{ entry.val }}</p><br>
+      </div>
+      <button (click)='getCheckedBoxes()'>Done</button>        
+    </div>   -->
+    <!-- <ion-item>
+      <ion-icon name="md-call" item-left></ion-icon>
+      <ion-input type="number" placeholder="Phone Number"></ion-input>
+    </ion-item> -->
+    <div class="spacer" style="width:300px;height:15px;" id="signup-spacer9"></div>
+    <button id="signup-button3" ion-button color="balanced" block full type="submit" [disabled]="!validations_form.valid">
+      Sign up
+    </button>
+  </form>
+  
+    <div id="signup-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">
+        Already have account?
+      </p>
+    </div>
+    <button id="login-button2" ion-button clear color="light" block on-click="goToLogin()">
+      Login here
+    </button>
+</ion-content>

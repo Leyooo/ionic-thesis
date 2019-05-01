@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Account</ion-title>
+    </ion-navbar>
+    <!-- <ion-toolbar style='background-color: #4A672C;'>
+      <ion-segment [(ngModel)]="account">
+        <ion-segment-button value="profile" style='color: white;'>
+          Profile
+        </ion-segment-button>
+        <ion-segment-button value="saved" style='color: white;'>
+          Saved Items
+        </ion-segment-button>
+        <ion-segment-button value="orders" style='color: white;'>
+          Orders
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>-->
+  </ion-header>
+  
+  <ion-content class="outer-content">
+        <ion-card>
+            <ion-list>
+                <ion-item>
+                  <ion-avatar item-start>
+                    <img src="http://localhost/fnp_db/upload/avatar/{{ userDetails.avatar }}">
+                  </ion-avatar>
+                  <h2>{{ userDetails.name }}</h2>
+                  <p>{{ userDetails.occupation }}</p>
+                </ion-item>
+              </ion-list>
+        </ion-card>
+    
+        <ion-card>
+          <ion-card-header>
+            Contact Info
+          </ion-card-header>
+          <ion-list>
+            <button ion-item>
+                <ion-icon name="pin" item-start></ion-icon>
+                {{ userDetails.location }}
+            </button>
+            <button ion-item>
+                <ion-icon name="mail" item-start></ion-icon>
+                {{ userDetails.email }}
+            </button>
+            <button ion-item>
+                <ion-icon name="phone-portrait" item-start></ion-icon>
+                {{ userDetails.mobile }}
+            </button>
+            <!-- <button ion-item>
+              <ion-icon name="man" item-start></ion-icon>
+              {{ userDetails.sex }}
+          </button> -->
+            </ion-list>
+            <button ion-button outline block (click)="editProfile()" >Edit Profile</button>
+          </ion-card>
+          <ion-card>
+            <ion-card-header>
+              Ratings
+            </ion-card-header>
+            <ion-item>
+              <span> Gamer's Rating: <ion-icon name="star" style="color:#f2b01e"></ion-icon>  4.1</span> <br>
+              <!---<button ion-button clear item-end (click)="viewProfile()">View</button>-->
+            </ion-item>
+
+            <ion-item>
+              <span> Games: </span> <br>
+              <button ion-button (click)="viewProfile()">DOTA 2</button><br>
+              <button ion-button (click)="viewProfile()">Mobile Legends</button><br>
+              <button ion-button (click)="viewProfile()">League of Legends</button><br>
+              <button ion-button (click)="viewProfile()">Arena of Valor</button>
+            </ion-item>
+            
+            
+          </ion-card>
+
+  </ion-content>
+  

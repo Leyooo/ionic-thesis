@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+        
+<ion-content>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label sstacked>Upload Avatar</ion-label><br>
+        <ion-input id="photo-input" type="file" [(ngModel)]="imageData.imageB64" (change)="onFileChange($event)" accept="image/*"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Full name</ion-label>
+        <ion-input type="text" [(ngModel)]="profileData.name" placeholder="{{ userDetails.name }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Sex</ion-label>
+        <ion-select name="sex" [(ngModel)]="userDetails.sex">
+          <div *ngFor="let bItem of items">
+            <ion-option value="{{bItem}}">{{bItem}}</ion-option>
+          </div>
+        </ion-select>
+      </ion-item>
+
+      <!--
+        <ion-select name="event" [(ngModel)]="bookingData.title" [selectOptions]="selectOptions">
+              <div *ngFor="let bItem of items">
+                <ion-option value="{{bItem}}">{{bItem}}</ion-option>
+              </div>
+            </ion-select>
+          -->
+      <ion-item>
+        <ion-label stacked>Birthday</ion-label>
+        <ion-input type="date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Occupation</ion-label>
+        <ion-input type="text" [(ngModel)]="profileData.occupation" value="{{ userDetails.occupation }}"></ion-input>
+      </ion-item>
+              
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input type="text"  [(ngModel)]="profileData.location" value="{{ userDetails.location }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Mobile Number</ion-label>
+        <ion-input type="text" [(ngModel)]="profileData.mobile"></ion-input>
+      </ion-item>
+
+      <br>
+      <button ion-button round block (click)="updateProfile()" full>Update</button>
+      
+    </ion-list>
+  </ion-card-content>
+</ion-content>
+    

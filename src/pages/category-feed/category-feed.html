@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ category }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+
+  <ion-list *ngFor="let item of dataSet | search : terms">
+    <div *ngIf="item.category===category">
+        <ion-item >
+          <ion-thumbnail item-left>
+            <img src="http://localhost/siseedlan/upload/products/{{ item.image }}"/>
+          </ion-thumbnail>
+          <h2><b>{{ item.product_name }}</b></h2>          
+          <p>₱ {{ item.price }}.00</p>
+        <ion-icon name="ios-leaf" item-right style="float:right;font-size:25px;color: #4A672C"></ion-icon>
+        </ion-item>
+  </div>
+    </ion-list>
+</ion-content>

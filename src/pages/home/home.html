@@ -1,0 +1,31 @@
+<ion-header >
+  <ion-navbar class="background-header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content padding>
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-6 *ngFor="let item of dataSet | search : terms">
+          <ion-card>
+            <img (click)="showDetails(item)" src="http://localhost/fnp_db/upload/avatar/{{ item.avatar }}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />      
+            <ion-card-content>
+              <!--<ion-card-title> </ion-card-title>-->
+              <h2><b>{{ item.name }} </b></h2>
+              <p>{{ item.gender }}
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button id="login-button1" ion-button round  block (click)="logout()">Logout</button>
+
+  </ion-content>
+  

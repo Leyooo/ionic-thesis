@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Validate OTP (One Time Passcode)
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page8">
+  <div class="spacer" style="width:320px;height:63px;" id="validateOTPOneTimePasscode-spacer12"></div>
+  <ion-card id="validateOTPOneTimePasscode-card22">
+    <ion-card-content>
+      <ion-list>
+        <div id="validateOTPOneTimePasscode-markdown2" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">
+            A One Time Passcode has been sent to &lt;number&gt;.
+          </p><br>
+          <p style="color:#000000;">
+            Please enter the OTP below to verify your mobile number. If you cannot see the email from &quot;Encrypt Team&quot; in your inbox. make sure to check your SPAM folder.
+          </p>
+        </div>
+        <ion-item>
+          <ion-input type="text" placeholder="Enter the code here" class="text-input" [(ngModel)]="val"></ion-input>
+        </ion-item>
+      <ion-item><button id="validateOTPOneTimePasscode-button4" ion-button color="positive" (click)="validate()">
+          Validate OTP
+        </button>
+        <button id="validateOTPOneTimePasscode-button4" ion-button clear color="positive" style="float: right">
+            Resend OTP
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

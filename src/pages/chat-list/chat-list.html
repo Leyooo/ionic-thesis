@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Messages</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+      <ion-list *ngFor="let item of dataSet">
+          <!-- <div *ngIf="item.user_id==userDetails.user_id"> -->
+              <ion-item (click)="message(item)" *ngIf="item.user_id!=userDetails.user_id">      
+                <ion-avatar item-left>
+                  <img src="http://localhost/siseedlan/upload/avatar/{{ item.avatar }}"/>
+                </ion-avatar>
+                <h2><b>{{ item.name }}</b></h2>          
+                <p>{{ item.message }}</p>
+              </ion-item>
+        <!-- </div> -->
+      </ion-list>
+</ion-content>

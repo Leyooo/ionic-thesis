@@ -1,0 +1,80 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img class="title-image" alt="logo" height="40"   src="assets/img/logo.png" >
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Forum Categories</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: black">
+
+  <!-- Beginning of the category card -->
+  <div class="padding_helper" color="white" (click)="CategoryTapped('2')">
+    <div class="category__image">
+        <div class="text-center image__padding">
+          <p class="section__headline">
+            Categories ►
+          </p>
+          <p class="nomargin category__headline">
+            DOTA
+          </p>
+        </div>
+    </div>
+  </div>
+  <!-- End of the category card -->
+
+  <!-- Beginning of the category card -->
+  <div class="padding_helper" color="white" (click)="CategoryTapped('3')">
+    <div class="category__image2">
+        <div class="text-center image__padding">
+          <p class="section__headline">
+            Categories ►
+          </p>
+          <p class="nomargin category__headline">
+            ML
+          </p>
+        </div>
+    </div>
+  </div>
+  <!-- End of the category card -->
+
+  <!-- Beginning of the category card -->
+  <div class="padding_helper" color="white" (click)="CategoryTapped('1')">
+    <div class="category__image3">
+        <div class="text-center image__padding">
+          <p class="section__headline">
+            Categories ►
+          </p>
+          <p class="nomargin category__headline">
+            LOL
+          </p>
+        </div>
+    </div>
+  </div>
+  <!-- End of the category card -->
+
+  <!-- Beginning of the category card -->
+  <div class="padding_helper" color="white" (click)="CategoryTapped('4')">
+    <div class="category__image4">
+        <div class="text-center image__padding">
+          <p class="section__headline">
+            Categories ►
+          </p>
+          <p class="nomargin category__headline">
+            AOV
+          </p>
+        </div>
+    </div>
+  </div>
+  <!-- End of the category card -->
+
+</ion-content>

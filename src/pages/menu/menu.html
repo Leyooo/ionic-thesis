@@ -1,0 +1,22 @@
+<ion-menu [content]="content" persistent=true>
+  <ion-content>
+
+      <ion-card text-center class="hide-card">
+          <img src="http://localhost/fnp_db/upload/avatar/{{ userDetails.avatar }}" class="custom-avatar"/>
+      </ion-card>
+      <ion-toolbar>
+        <ion-title text-center>{{ userDetails.name }}</ion-title>
+      </ion-toolbar>
+    <ion-list>
+
+      <button menuClose ion-item (click)="goProfile()"> <ion-icon item-start name="person"></ion-icon> My Account </button>
+      <button menuClose ion-item (click)="goHome()"> <ion-icon item-start name="home"></ion-icon> Browse </button>
+      <button menuClose ion-item (click)="goCategories()"> <ion-icon item-start name="menu"></ion-icon>Forum Categories </button>
+      <button menuClose ion-item (click)="goMessages()"> <ion-icon item-start name="mail"></ion-icon>Messages</button>
+      <button menuClose ion-item (click)="logout()"><ion-icon item-start name="md-exit"></ion-icon> Logout </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

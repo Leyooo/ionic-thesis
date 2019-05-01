@@ -1,0 +1,41 @@
+page-signup {
+    ion-item {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-radius: 5px !important;
+        padding-left: 25px !important;
+        font-size: 0.9em;
+        margin-bottom: 10px !important;
+        border: 1px solid #ffffff;
+        border-bottom: 0px !important;
+        box-shadow: none !important;
+      }
+    
+      ion-item.item{
+    
+        .icon {
+            color: white;
+            margin-right: -10px;
+          }
+          
+      }
+    
+      .text-input::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    
+      .text-input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    
+      .text-input::-webkit-input-placeholder {
+        color:rgba(255, 255, 255, 0.6);
+      }
+    
+      .validation-errors {
+
+        color: lightgreen;
+        padding-left: 30px;
+        padding-bottom: 5px;
+      }
+}

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Threads</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  <button id="login-button3" ion-button color="dark" block style="color:#17E1D1;"on-click="createPost()">
+    Create new thread
+  </button>
+    <ion-item>
+        <ion-col col-6 *ngFor="let item of dataSet | search : terms">
+          <ion-list on-click="goToDis()">
+            <ion-item >
+              <h2><b> {{ item.title }}</b></h2>          
+              <p> {{ item.username }} </p>
+              <p> {{ item.datetime }} </p>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+    </ion-item>
+</ion-content>

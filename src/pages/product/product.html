@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Product Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="product-detail" style="background-color: #f4f4f4;">
+  <ion-card style="padding: 20px"><img src="http://localhost/siseedlan/upload/products/{{ item.image }}"></ion-card>
+  
+  <ion-card>
+    <ion-card-content *ngIf="item">
+      <ion-card-title> {{ item.product_name }} <span class="timestamp">{{ item.created }}</span></ion-card-title>
+      <p >Category ► {{ item.category }}</p><br>
+      <small >Price</small>
+      <p>₱ {{ item.price }}.00 </p>
+    <!-- <ion-badge width="25">4.1<ion-icon name="star"></ion-icon></ion-badge> 
+        <span style="font-size: 12px;color: #717171;">340 ratings, 58 reviews</span>-->
+     </ion-card-content>
+<!--      <ion-row>
+        <ion-col width-50 >
+          <ion-icon name="share-alt">Share</ion-icon>
+        </ion-col>
+        <ion-col width-50 >
+          <ion-icon name="leaf">Wishlist</ion-icon>
+        </ion-col>
+      </ion-row>-->
+
+    <ion-card-content>
+     <ion-row class="detail">
+      <b>Description</b>
+     </ion-row>
+      <ul>{{ item.description }}</ul>
+       <ion-row class="detail">
+        <b>Tips & Techniques</b>
+       </ion-row>
+        <ul>{{ item.tips }}</ul>
+      </ion-card-content>
+    </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row class="detail">
+        <b>Vendor</b>
+      </ion-row>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://localhost/siseedlan/upload/avatar/{{item.avatar}}">
+        </ion-avatar>
+        <button ion-button clear (click)="viewProfile()">{{ item.name }}</button><br>
+        <span style=" font-size: small; margin-left:10px;"> Buyer's Rating: <ion-icon name="star" style="color:#f2b01e"></ion-icon>  4.1</span> <br>
+        <span style=" font-size: small; margin-left:10px;" *ngIf="item.type==='1'"> Seller's Rating: <ion-icon name="star" style="color:#f2b01e"></ion-icon>  4.1</span> <br>
+        <!---<button ion-button clear item-end (click)="viewProfile()">View</button>-->
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+        <ion-item>
+            <h2 style="text-align: center">Recommended</h2>
+          </ion-item>
+          <ion-grid no-padding >
+              <ion-row>
+                <ion-col col-3 *ngFor="let item of dataSet" style="padding: 2px;">
+                    <img src="http://localhost/siseedlan/upload/products/{{ item.image }}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />      
+                      <p style="text-align: center;"> {{ item.product_name }} </p>
+                </ion-col>
+              </ion-row>
+          </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer style="background-color: #fff;">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <button ion-button full clear (click)="saveItem(item.product_id, item.name)">
+               <ion-icon name="bookmark" style="padding-right:10px"></ion-icon> Save Item
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <ion-buttons>
+            <button ion-button full (click)="message(item.name)">
+              <ion-icon name="mail" style="padding-right:10px"></ion-icon> interested
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>

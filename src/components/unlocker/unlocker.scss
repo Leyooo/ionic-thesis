@@ -1,0 +1,43 @@
+unlocker {
+    input[type="range"] {
+        width: 20%;
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#DDDDDD), to(#dddddd));
+        -webkit-appearance: none;
+        border-radius: 30px;
+        padding: 5px;
+        transition: opacity 0.5s;
+        position: relative;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border-radius: 90px;
+        background: #4A672C;
+        //-webkit-linear-gradient(top, #4A672C 0%,#4A672C 50%,green 51%,green 100%);
+        z-index: 1;
+        width: 15px;
+        position: relative;
+        height: 15px;
+    }
+    
+    input[type="range"]:before {
+        //content: "Swipe to open";
+        color: #8a8a8a;
+        position: absolute;
+        left: 100px;
+        top: 14px;
+        z-index: 1;
+        font-size: 18px;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:before {
+        color: #8a8a8a;
+        position: absolute;
+        left: 5px;
+        top: -10px;
+        z-index: 1;
+        font-size: 56px;
+        font-weight: bold;
+        //content: "→";
+    }
+}

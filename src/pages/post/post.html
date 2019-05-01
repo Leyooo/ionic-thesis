@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Post</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list no-line>
+
+<!--      <ion-item>
+          <p>{{imageURI}}</p>
+          <button ion-button color="secondary" (click)="getImage()">Get Image</button>
+        </ion-item>
+        <ion-item>
+          <h4>Image Preview</h4>
+          <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="uploadFile()">Upload</button>
+        </ion-item> -->
+
+    <ion-item>
+        <ion-label stacked>Upload Image</ion-label>
+        <ion-input id="photo-input" type="file" [(ngModel)]="productData.image" accept="image/*"></ion-input>     
+    </ion-item>
+        
+    <ion-item>
+      <ion-input type="text" placeholder="Name" [(ngModel)]="productData.product_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="productData.description"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Category</ion-label>
+      <ion-select name="category" [(ngModel)]="productData.category">
+        <ion-option value="Seeds">Seeds</ion-option>
+        <ion-option value="Seedlings">Seedlings</ion-option>
+        <ion-option value="Plants">Plants</ion-option>
+        <ion-option value="Soil">Soil</ion-option>
+        <ion-option value="Fertilizers">Fertilizers</ion-option>
+        <ion-option value="Crops">Crops</ion-option>
+        <ion-option value="Others">Others</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-input type="text" placeholder="Quantity" [(ngModel)]="productData.available"></ion-input>
+      </ion-item>
+    
+    <ion-item>
+      <ion-input type="text" placeholder="Price" [(ngModel)]="productData.price"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Tips and Techniques" [(ngModel)]="productData.tips"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div>
+    <button ion-button  round block (click)="post()">Post</button>
+  </div>
+</ion-content>
